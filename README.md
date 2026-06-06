@@ -1,42 +1,49 @@
+<div align="center">
+
 # Keloid Transcriptome Meta-analysis
+
+### A quality-stratified multi-cohort transcriptomic workflow for keloid disease-signature discovery
+
+![Manuscript](https://img.shields.io/badge/manuscript-submitted-blue)
+![Analysis](https://img.shields.io/badge/analysis-reproducible-brightgreen)
+![Data](https://img.shields.io/badge/data-GEO-orange)
+![Status](https://img.shields.io/badge/status-post--submission-lightgrey)
+
+</div>
+
+---
+
+## About this repository
 
 This repository contains the reproducible analysis workflow accompanying the submitted manuscript:
 
-**Multi-cohort transcriptomic meta-analysis identifies a fibrosis-centered keloid disease signature and mechanism-informed exploratory compound hypotheses**
+> **Multi-cohort transcriptomic meta-analysis identifies a fibrosis-centered keloid disease signature and mechanism-informed exploratory compound hypotheses**
 
 The manuscript has been submitted for journal consideration.
 
-## Overview
+This project re-analyses public keloid transcriptomic datasets from the Gene Expression Omnibus using a conservative, quality-stratified framework. The workflow separates accession retrieval, differential-expression computability, gene-symbol interpretability, and strict QC-passing biological evidence to reduce overinterpretation of heterogeneous public transcriptomic resources.
 
-This project re-analyses public keloid transcriptomic datasets from GEO using a conservative, quality-stratified framework. The analysis separates accession retrieval, differential-expression computability, gene-symbol interpretability, and strict QC-passing biological evidence to avoid over-counting public datasets as patient-level cohorts.
+---
 
-The workflow screened **13 GEO accessions**, generated **7 complete differential-expression reports**, integrated **4 strict HGNC-like consensus contributors**, and interpreted **3 strict QC-passing cohorts** as the primary evidence layer. The strict interpreted layer included **13 modelled keloid** and **12 modelled control/comparator** samples, with effective balanced support of 12 samples per group. :contentReference[oaicite:0]{index=0}
+## Study design
+
+| Evidence layer | Description | Count |
+|---|---:|---:|
+| GEO accession screening | Retrieved or attempted keloid-related GEO records | 13 accessions |
+| DEG-complete landscape | Accessions producing complete differential-expression reports | 7 reports |
+| Strict HGNC-like consensus layer | Gene-symbol-resolved contributors used for consensus integration | 4 contributors |
+| Primary interpreted evidence layer | Strict QC-passing cohorts used for biological interpretation | 3 cohorts |
+
+The strict interpreted layer included **13 modelled keloid samples** and **12 modelled control/comparator samples**, with effective balanced support of 12 samples per group.
+
+---
 
 ## Main finding
 
-The analysis identifies a recurrent keloid-up extracellular-matrix and fibrosis-centered transcriptomic program involving:
+The primary biological signal is a recurrent **keloid-up extracellular-matrix and fibrosis-centered transcriptomic program**.
 
-**SPARC, COL1A1, COL1A2, COL3A1, TGFBI, LOXL2, COL5A1, FN1, POSTN, COL5A2, BGN, SERPINH1, COL6A1, and TGFB2**. :contentReference[oaicite:1]{index=1}
+The prioritized anchor genes are:
 
-Functional enrichment converged on extracellular-matrix organisation, collagen biosynthesis, collagen fibril assembly, ECM proteoglycans, fibronectin matrix formation, and TGF-beta-associated pathway context. :contentReference[oaicite:2]{index=2}
-
-## Repository contents
-
-- GEO dataset eligibility and QC logic
-- Metadata curation and phenotype assignment scripts
-- Cohort-level differential-expression workflows
-- Quality-weighted consensus integration
-- GO, KEGG, and Reactome enrichment analyses
-- STRINGdb-based network-prioritization outputs
-- Sensitivity analyses
-- Exploratory mechanism-informed compound prioritization
-
-## Interpretation note
-
-The compound candidates **pirfenidone, tranilast, doxycycline, triamcinolone, and ruxolitinib** are reported only as exploratory, mechanism-informed hypotheses. They should not be interpreted as validated therapeutics, clinical recommendations, or confirmed LINCS/CMap reversal hits. :contentReference[oaicite:3]{index=3}
-
-## Status
-
-**Manuscript status:** submitted for journal consideration.
-
-This repository is intended to support transparency, reproducibility, and post-submission access to the computational workflow and analysis outputs.
+```text
+SPARC, COL1A1, COL1A2, COL3A1, TGFBI, LOXL2, COL5A1,
+FN1, POSTN, COL5A2, BGN, SERPINH1, COL6A1, TGFB2
